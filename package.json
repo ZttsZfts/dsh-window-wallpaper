@@ -1,0 +1,64 @@
+{
+  "name": "dsh-window-wallpaper",
+  "version": "1.0.0",
+  "description": "Full-window background image for the DeepSeek Harness Web GUI, with adjustable scrim, panel opacity, and blur.",
+  "type": "module",
+  "main": "./index.js",
+  "license": "MIT",
+  "author": "ZttsZfts",
+  "homepage": "https://github.com/ZttsZfts/dsh-window-wallpaper#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZttsZfts/dsh-window-wallpaper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ZttsZfts/dsh-window-wallpaper/issues"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "wallpaper",
+    "background",
+    "theme",
+    "appearance"
+  ],
+  "engines": {
+    "dsh": ">=0.2.2-rc.5 <0.3.0"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "docs",
+    "assets",
+    "README.md",
+    "LICENSE",
+    "icon.svg"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-theme",
+        "@deepseek-ai/dsh-client-ui-settings-general"
+      ]
+    }
+  }
+}
